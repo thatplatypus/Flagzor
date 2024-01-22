@@ -1,0 +1,20 @@
+﻿@using Flagzor.Components
+@inherits LayoutComponentBase
+<CascadingFeatureFlagState>
+<div class="page">
+    <FeatureFlagView Feature="Navigation">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+    </FeatureFlagView>
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+</CascadingFeatureFlagState>

@@ -1,0 +1,94 @@
+﻿@page "/"
+@using Flagzor.Components
+@using Flagzor.Extensions
+@inject IFeatureFlagService FeatureFlagService
+@inject FeatureFlagStateProvider FeatureFlagStateProvider
+
+<PageTitle>Home</PageTitle>
+
+
+<label class="switch">
+    <input checked="@_navigation" @bind-value="_navigation" @onclick="ToggleNavigation" type="checkbox">
+    <span class="slider round">Navigation</span>
+</label>
+
+<br>
+
+<label class="switch">
+    <input @bind-value="_test" @onclick="ToggleTest" type="checkbox">
+    <span class="slider round">Test</span>
+</label>
+ 
+<br>
+
+<FeatureFlagView Feature="Test">
+    This is shown when the feature flag is enabled.
+</FeatureFlagView>
+
+<br>
+
+<label class="switch">
+    <input @bind-value="_test2" @onclick="ToggleTest2" type="checkbox">
+    <span class="slider round">Test2</span>
+</label>
+
+<br>
+
+<FeatureFlagView Feature="Test2">
+    <ChildContent>
+        This is shown when the feature flag is enabled.
+    </ChildContent>
+    <NotActive>
+        This is shown when the feature flag is disabled.
+    </NotActive>
+</FeatureFlagView>
+
+@code {
+    private bool _navigation = false;
+    private bool _test = false;
+    private bool _test2 = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _navigation = await FeatureFlagStateProvider.IsFeatureFlagActive("Navigation");
+    }
+
+    protected async Task ToggleNavigation()
+    {
+        await Task.Yield();
+        if(_navigation)
+        {
+            await FeatureFlagStateProvider.RegisterFeatureFlagAsync(FeatureFlagService, "Navigation");
+        }
+        else
+        {
+            await FeatureFlagStateProvider.UnregisterFeatureFlagAsync(FeatureFlagService, "Navigation");
+        }
+    }
+
+    protected async Task ToggleTest()
+    {
+        await Task.Yield();
+        if (_test)
+        {
+            await FeatureFlagStateProvider.RegisterFeatureFlagAsync(FeatureFlagService, "Test");
+        }
+        else
+        {
+            await FeatureFlagStateProvider.UnregisterFeatureFlagAsync(FeatureFlagService, "Test");
+        }
+    }
+
+    protected async Task ToggleTest2()
+    {
+        await Task.Yield();
+        if (_test2)
+        {
+            await FeatureFlagStateProvider.RegisterFeatureFlagAsync(FeatureFlagService, "Test2");
+        }
+        else
+        {
+            await FeatureFlagStateProvider.UnregisterFeatureFlagAsync(FeatureFlagService, "Test2");
+        }
+    }
+}
