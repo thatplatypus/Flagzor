@@ -1,13 +1,13 @@
 ﻿@implements IDisposable
 @inject FeatureFlagStateProvider FeatureFlagStateProvider
 
-<CascadingValue TValue="System.Threading.Tasks.Task<FeatureFlagState>" Value="@_currentFeatureFlagStateTask" ChildContent="@ChildContent" />
+<CascadingValue TValue="System.Threading.Tasks.Task<FeatureFlagState>" Value="@_currentFeatureFlagStateTask" ChildContent="@(ChildContent!)" />
 
 @code {
     private Task<FeatureFlagState>? _currentFeatureFlagStateTask;
 
     /// <summary>
-    /// The content to which the authentication state should be provided.
+    /// The content to which the feature flag state should be provided.
     /// </summary>
     [Parameter]
     public RenderFragment? ChildContent { get; set; }

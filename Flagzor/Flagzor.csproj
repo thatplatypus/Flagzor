@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -15,6 +15,9 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="Flagzor.Test"/>
+	</ItemGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />

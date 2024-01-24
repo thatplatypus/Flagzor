@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flagzor", "Flagzor.csproj", "{F68C71EB-D560-4969-8C8A-775C2E5852E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flagzor", "Flagzor.csproj", "{F68C71EB-D560-4969-8C8A-775C2E5852E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flagzor.Sample", "..\Flagzor.Sample\Flagzor.Sample.csproj", "{5AC2D66E-F5FA-45DE-A934-5F448E45E154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flagzor.Sample", "..\Flagzor.Sample\Flagzor.Sample.csproj", "{5AC2D66E-F5FA-45DE-A934-5F448E45E154}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flagzor.Test", "..\Flagzor.Test\Flagzor.Test.csproj", "{4A7950B0-4553-43F2-B103-2F04490E8DC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5AC2D66E-F5FA-45DE-A934-5F448E45E154}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AC2D66E-F5FA-45DE-A934-5F448E45E154}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AC2D66E-F5FA-45DE-A934-5F448E45E154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A7950B0-4553-43F2-B103-2F04490E8DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A7950B0-4553-43F2-B103-2F04490E8DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A7950B0-4553-43F2-B103-2F04490E8DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A7950B0-4553-43F2-B103-2F04490E8DC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
