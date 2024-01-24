@@ -90,9 +90,9 @@ You can also show different sets of content to indicate between active feature f
 
 ```razor
 <FeatureFlagView Feature="Test2">
-    <ChildContent>
+    <Active>
         This is shown when the feature flag is enabled.
-    </ChildContent>
+    </Active>
     <NotActive>
         This is shown when the feature flag is disabled.
     </NotActive>
@@ -102,9 +102,9 @@ You can also show different sets of content to indicate between active feature f
 Another example with changing logic by rendering a different button:
 ```razor
 <FeatureFlagView Feature="BetaFeature">
-    <ChildContent>
+    <Active>
         <button onclick=(BetaFunction)>Feature Button</button>
-    </ChildContent>
+    </Active>
     <NotActive>
        <button onclick=(NormalFunction)>Button</button>
     </NotActive>
