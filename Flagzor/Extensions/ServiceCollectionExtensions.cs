@@ -92,7 +92,7 @@ namespace Flagzor.Extensions
 
         /// <summary>
         /// Adds Flagzor services to the specified <see cref="IServiceCollection"/> with a configuration from an <see cref="IConfiguration"/> object and a custom feature flag service.
-        /// </summary>
+        /// </summary>/
         public static IServiceCollection AddFeatureFlagzor<TService, TProvider>(this IServiceCollection services, IConfiguration configuration)
             where TService : class, IFeatureFlagService
             where TProvider : FeatureFlagStateProvider

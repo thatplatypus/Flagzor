@@ -19,6 +19,12 @@ builder.Services.AddFeatureFlagzor(config =>
         Feature = "Navigation",
         Enabled = false
     });
+
+    config.FeatureFlags.Add(new FeatureFlag
+    {
+        Feature = "Routing",
+        Enabled = true
+    });
 });
 
 await builder.Build().RunAsync();

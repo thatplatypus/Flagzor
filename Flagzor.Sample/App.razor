@@ -1,7 +1,11 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿<Flagzor.Components.CascadingFeatureFlagState>
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        <Flagzor.Components.FeatureFlagRouteView Feature="Routing" RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <NotActive>
+                <p role="alert">Sorry, `Routing` feature is disabled.</p>
+            </NotActive>
+</Flagzor.Components.FeatureFlagRouteView>
     </Found>
     <NotFound>
         <PageTitle>Not found</PageTitle>
@@ -10,3 +14,4 @@
         </LayoutView>
     </NotFound>
 </Router>
+</Flagzor.Components.CascadingFeatureFlagState>
