@@ -1,13 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
+<PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
+    <Authors>Tom Brewer</Authors>
+    <Company>thatplatypus</Company>
+    <Copyright>Copyright © Tom Brewer 2024</Copyright>
+    <PackageId>YourPackageId</PackageId>
+    <Repository>https://github.com/thatplatypus/Flagzor</Repository>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryBranch>main</RepositoryBranch>
+    <RepositoryUrl>https://github.com/thatplatypus/Flagzor</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
   </PropertyGroup>
 
@@ -16,7 +26,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Flagzor.Test"/>
+		<InternalsVisibleTo Include="Flagzor.Test" />
 	</ItemGroup>
 
   <ItemGroup>

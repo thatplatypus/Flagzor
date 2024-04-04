@@ -32,9 +32,9 @@ namespace Flagzor.Components
         /// The content that will be displayed if the feature flag is not enabled.
         /// </summary>
         [Parameter]
-        public RenderFragment? NotActive { get; set; }
+        public RenderFragment? Inactive { get; set; }
 
-        private static readonly RenderFragment _defaultNotActiveContent
+        private static readonly RenderFragment _defaultInactiveContent
             = builder => builder.AddContent(0, "Feature not enabled");
 
         private readonly RenderFragment _renderFeatureFlagRouteViewCoreDelegate;
@@ -65,7 +65,7 @@ namespace Flagzor.Components
             }
             else
             {
-                (NotActive ?? _defaultNotActiveContent)(builder);
+                (Inactive ?? _defaultInactiveContent)(builder);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Flagzor.Components
         /// <summary>
         /// The content that will be displayed if the feature flag is not active.
         /// </summary>
-        [Parameter] public RenderFragment<FeatureFlagState>? NotActive { get; set; }
+        [Parameter] public RenderFragment<FeatureFlagState>? Inactive { get; set; }
 
         /// <summary>
         /// The content that will be displayed if the user is authorized.
@@ -43,7 +43,7 @@ namespace Flagzor.Components
             }
             else
             {
-                builder.AddContent(0, NotActive?.Invoke(_currentFeatureFlagState!));
+                builder.AddContent(0, Inactive?.Invoke(_currentFeatureFlagState!));
             }
         }
 
@@ -51,7 +51,7 @@ namespace Flagzor.Components
         protected override async Task OnParametersSetAsync()
         {
             // 'ChildContent' is for convenience in basic cases, and 'Active' for symmetry
-            // with 'NotActive' in other cases. Besides naming, they are equivalent. To avoid
+            // with 'Inactive' in other cases. Besides naming, they are equivalent. To avoid
             // confusion, explicitly prevent the case where both are supplied.
             if (ChildContent != null && Active != null)
             {

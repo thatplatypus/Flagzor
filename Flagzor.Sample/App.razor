@@ -2,9 +2,9 @@
 <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <Flagzor.Components.FeatureFlagRouteView Feature="Routing" RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-            <NotActive>
+            <Inactive>
                 <p role="alert">Sorry, `Routing` feature is disabled.</p>
-            </NotActive>
+            </Inactive>
 </Flagzor.Components.FeatureFlagRouteView>
     </Found>
     <NotFound>

@@ -93,9 +93,9 @@ You can also show different sets of content to indicate between active feature f
     <Active>
         This is shown when the feature flag is enabled.
     </Active>
-    <NotActive>
+    <Inactive>
         This is shown when the feature flag is disabled.
-    </NotActive>
+    </Inactive>
 </FeatureFlagView>
 ```
 
@@ -105,9 +105,9 @@ Another example with changing logic by rendering a different button:
     <Active>
         <button onclick=(BetaFunction)>Feature Button</button>
     </Active>
-    <NotActive>
+    <Inactive>
        <button onclick=(NormalFunction)>Button</button>
-    </NotActive>
+    </Inactive>
 </FeatureFlagView>
 ```
 
